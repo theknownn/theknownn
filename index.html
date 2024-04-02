@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theknownn_dev</title>
+    <style>
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f9f9f9;
+        }
+        header{
+            background-color: #595c55;
+            color: #fff;
+            padding: 10px 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img{
+            margin-left: 10px;
+            width: 100px;
+            height: auto;
+        }
+        nav ul{
+            list-style: none;
+        }
+        
+        nav ul li{
+            display: inline;
+            margin-right: 25px;
+        }
+        nav ul li a{
+            color: #fff;
+            text-decoration:none;
+            font-size: 14px;
+        }
+        .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+        .hero{
+            background-image: url("img/Home.jpg");
+            background-size:cover;
+            background-position: center;
+            height: 75vh;
+            text-align:center;
+            padding:100px 0;
+
+        }
+        .content{
+            color: #fff;
+            margin: 0 auto;
+            max-width: 600px;
+            text-align:inherit;
+        }
+        .hero h2{
+            font-size: 50px;
+            margin-left: 35%;
+            margin-bottom: 20px;
+        }
+
+        .hero p{
+            margin-left: 35%;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        .btn{
+            margin-left: 35%;
+            display: inline;
+            background-color: #2f35a2;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover{
+            background-color: #959cb0;
+        }
+        
+        .about-section {
+            background-image: url("img/about.jpg");
+            background-size:cover;
+            background-position: center;
+            height: 80vh;
+            color: #ffffff;
+            text-align:center;
+            padding:80px 0;
+
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content h2{
+            font-weight: bold;
+            font-size: 40px;
+            color: black;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .about-description {
+            margin-top: 40px;
+            width: 100%;
+        }
+        .about-description h3{
+            color: black;
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 10px;
+        }
+        .about-description p{
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .about-description ul{
+            font-size: 18px;
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .about-description ul li{
+            margin-bottom: 10px;
+        }
+        .service-section{
+            align-items: center;
+            color: #000;
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        .service-section h2{
+            text-align: center;
+        }
+        .services{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .service{
+            width: 270px;
+            margin: 30px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .service img{
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .service h3{
+            font-size: 24px;
+            color:#333;
+            margin-bottom: 10px;
+        }
+        .service p{
+            color: #000;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .contact-section{
+            background-image: url("img/contact.jpg");
+            background-position: cover;
+            color: white;
+            max-width: 100%;
+            height: 100%;
+            color: #000;
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        .contact-form{
+            max-width: 600px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .contact-form form{
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0,  0.4);
+        }
+        .form-group{
+            display: block;
+            font-weight: bold;
+            margin-bottom: 15px;
+
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea{
+            resize: vertical;
+        }
+        button[type="submit"]{
+            display: block;
+            width: 100%;
+            padding:  10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+        button[type="submit"]:hover{
+            background-color: #555;
+        }
+
+        .footer{
+            justify-content: center;
+            background-color: #595c55;
+            color: #fff;
+            padding: 20px 20px;
+            text-align: center;
+        }
+        .footer p{
+            text-align: center;
+            font-size: 18px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--home Section details-->
+    <section id="home" class="hero">
+        <div class="home">
+            <div class="content">
+                <h2>Welcome to Theknownn Developers,where your digital dreams become reality.</h2>
+                <p>Your Trusted Web Development Partner</p>
+                <P>Design is not just what it looks like and feels like. Design is how it works</P>
+                <a href="#about" class="btn" id="read-more-btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!---About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Us</h2>
+                <div class="about-description">
+                    <h3>Our Story</h3>
+                    <p>Welcome to TheKnownn Developers. Established in 2022, we have been dedicated to delivering high-quality web solutions tailored to our clients' needs.</p>
+                    <p>Starting as a small team of developers. We have Small Team for development but everyone is very talented and skilled members of our team.</p>
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li>Quality: We are committed to delivering top-notch solutions with attention to detail.</li>
+                        <li>Innovation: We embrace creativity and stay up-to-date with the latest technologies.</li>
+                        <li>Collaboration: We work closely with our clients to understand their goals and exceed their expectations.</li>
+                        <li>Integrity: We uphold honesty and transparency in all our interactions.</li>
+                    </ul>
+                    <h3>Our Team</h3>
+                    <p>Our team consists of skilled developers, designers, and project managers who are passionate about crafting exceptional digital experiences.</p>
+                    <p>With diverse backgrounds and expertise, we collaborate seamlessly to bring our clients' visions to life.</p>
+                </div>
+        </div>
+
+
+        <!--Service Section-->
+        <section id="service" class="service-section">
+                <h2>Our Services</h2>
+                <div class="services">
+                    <div class="service">
+                        <img src="img/webdev.png" alt="WebDev">
+                        <h3>Web Design and Web Development</h3>
+                        <p>We offer professional web design and development services tailored to your business needs. From simple static websites to complex web applications, we have the expertise to bring your ideas to life.</p>
+                    </div>
+                    <div class="service">
+                        <img src="img/uiux.png" alt="UI/UX">
+                        <h3>UI/UX Design</h3>
+                        <p>Enhance user satisfaction and engagement with our UI/UX design services. Our team of designers creates intuitive and visually appealing interfaces that delight users and elevate your brand.</p>
+                    </div>
+                    <div class="service">
+                        <img src="img/maintenance.png" alt="maintainence">
+                        <h3>Maintenance & Support</h3>
+                        <p>Keep your website running smoothly with our maintenance services. We provide regular updates, security patches, and technical support to ensure your website performs optimally at all times.</p>
+                    </div>
+                </div>
+        </section>
+
+        <!--Contact Section-->
+        <section id="contact" class="contact-section">
+            <h2>Contact US</h2>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Message:</label>
+                        <textarea id="Message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+
+    <!--Footer Section-->
+    <footer>
+        <div class="footer">
+            <p>&copy;2024 Theknownn Developers | All rights are reserved</p>
+        </div>
+    </footer>
+
+
+    <script>
+        /*Navigation bar script*/
+        window.addEventListener("scroll", function(){
+            var header = document.getElementById("header");
+            if(window.pageYOffset>0){
+                header.classList.add("fixed");
+            }else{
+                header.classList.remove("fixed");
+            }
+        });
+
+        /*Script for the read more button*/
+        document.getElementById('read-more-btn').addEventListener('click',function(event){
+            event.preventDefault();
+            var targetElement = document.getElementById('about');
+            targetElement.scrollIntoView({behavior:"smooth"});  // smoothly scroll to the target element
+        });
+
+        /*Script for smooth scrolling for navigation links */
+        document.addEventListener('DOMContentLoaded',function(){
+            var navLinks = document.querySelectorAll('header nav ul li a');
+
+            navLinks.forEach(function(link){
+                link.addEventListener('click',function(event){
+                    event.preventDefault();
+
+                    var targetId = this.getAttribute('href');
+                    var targetElement = document.querySelector(targetId);
+
+                    if(targetElement){
+                        var offsetTop = targetElement.offsetTop;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior:"smooth"
+                        });
+                    }
+                });
+            });
+        });
+
+        /*Script for send message*/
+    
+    </script>
+</body>
+</html>
